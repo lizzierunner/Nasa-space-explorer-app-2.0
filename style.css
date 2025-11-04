@@ -4828,3 +4828,52 @@ footer{ color:var(--muted); font-size:.9rem; padding:2rem 1rem 3rem; text-align:
 .image-error::after {
   opacity: 1 !important;
 }
+
+/* Celestial Beauty (Planetary Science) Fallback */
+.celestial-beauty-image {
+  background: linear-gradient(135deg,
+    #071029 0%,
+    #0b3d66 30%,
+    #103d4a 60%,
+    #12213e 100%);
+  background-size: 300% 300%;
+  animation: celestialGlow 10s ease-in-out infinite;
+  position: relative;
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.celestial-beauty-image::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.07) 0%, transparent 2%),
+    radial-gradient(circle at 70% 70%, rgba(255,255,255,0.04) 0%, transparent 1%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.celestial-beauty-image::after {
+  content: '✨';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2.6rem;
+  opacity: 0.9;
+  z-index: 2;
+  animation: twinkle 4s ease-in-out infinite;
+}
+
+@keyframes celestialGlow {
+  0%,100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+@keyframes twinkle {
+  0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.9; }
+  50% { transform: translate(-50%, -56%) scale(1.05); opacity: 1; }
+}
+

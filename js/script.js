@@ -2073,6 +2073,12 @@ function buildCard(item){
     thumbSrc = item.url;
   }
   
+  // Validate the URL to prevent loading page URLs as images
+  if (!thumbSrc || thumbSrc.includes('index.html') || thumbSrc.startsWith('http://127.0.0.1') || thumbSrc.startsWith('http://localhost')) {
+    console.warn('Invalid image URL detected:', thumbSrc);
+    thumbSrc = ''; // Set to empty to trigger fallback
+  }
+  
   img.src = thumbSrc;
   img.alt = item.title || (item.media_type === "video" ? "Video thumbnail" : "APOD image");
   img.className = "thumb";
@@ -2374,9 +2380,8 @@ async function runQuery(){
 
     console.log(`🖼️ Gallery created with ${galleryItems.length} items`);
 
-    // Update keyboard navigation and favorites
+    // Update keyboard navigation
     keyboardNav.updateCards();
-    favoritesManager.updateFavoriteButtons();
 
   }catch(err){
     console.error('APOD fetch error:', err);
@@ -4271,15 +4276,23 @@ function handleImageError(imgElement) {
   // Hide the broken image
   imgElement.style.opacity = '0';
   
+  // Check if this is an invalid URL (page URL instead of image)
+  const src = imgElement.src;
+  if (src && (src.includes('index.html') || src.includes('127.0.0.1') || src.includes('localhost'))) {
+    console.warn('🚫 Invalid image URL detected (page URL instead of image):', src);
+    // Clear the invalid src to prevent further errors
+    imgElement.src = '';
+  } else if (src) {
+    // Log the error for debugging only for valid image URLs
+    console.warn('🚫 Image failed to load:', src);
+  }
+  
   // Add error class to parent container for CSS fallback
   const cardImage = imgElement.closest('.card-image');
   if (cardImage) {
     cardImage.classList.add('image-error');
     console.log('🎨 Applied CSS fallback for broken image');
   }
-  
-  // Log the error for debugging
-  console.warn('🚫 Image failed to load:', imgElement.src);
 }
 
 // Global lazy load manager
