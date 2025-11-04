@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>NASA Space Explorer</title>
+  <meta name="description" content="Explore NASA's Astronomy Picture of the Day over a 9-day window." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <img src="img/NASA-Logo-Large.jpg" alt="NASA Logo" class="logo" />
+      <div>
+        <h1>NASA Space Explorer</h1>
+        <div class="sub">Astronomy Picture of the Day • 9-Day Explorer</div>
+      </div>
+    </div>
+
+    <div class="toolbar">
+      <div class="controls" role="group" aria-label="Date range controls">
+        <div>
+          <label for="start">Start date (9-day window)</label>
+          <input id="start" type="date" />
+        </div>
+        <div>
+          <label for="end">End date (auto-adjusted)</label>
+          <input id="end" type="date" />
+        </div>
+        <button id="go">Get Space Images</button>
+        <button id="sound-toggle" title="Toggle Sound Effects" aria-label="Toggle sound effects">🔊</button>
+        <button id="help-toggle" title="Keyboard Shortcuts (H)" aria-label="Show keyboard shortcuts">❓</button>
+      </div>
+
+      <div class="fact" id="factBox" aria-live="polite"></div>
+    </div>
+
+    <!-- Recommended Listening Section -->
+    <div class="music-recommendation" id="musicRecommendation">
+      <div class="music-content">
+        <div class="music-icon">🎵</div>
+        <div class="music-info">
+          <h3>Enhance Your Cosmic Journey</h3>
+          <p>Recommended listening while exploring the universe</p>
+        </div>
+        <a href="https://open.spotify.com/track/7qXddTDsEuxInJ8jzX1D9a" 
+           target="_blank" 
+           rel="noopener noreferrer" 
+           class="spotify-link" 
+           title="Open in Spotify">
+          <div class="spotify-track">
+            <div class="spotify-icon">🎧</div>
+            <div class="track-details">
+              <span class="track-title">Space-Themed Music</span>
+              <span class="platform">Listen on Spotify</span>
+            </div>
+            <div class="external-icon">↗️</div>
+          </div>
+        </a>
+        <button class="music-close" id="musicClose" aria-label="Close music recommendation">✕</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="status">
+      <span class="loading" id="loading"><span class="spinner"></span> Loading space awesomeness…</span>
+      <span id="statusText"></span>
+    </div>
+
+    <section class="gallery" id="gallery" aria-live="polite"></section>
+  </main>
+
+  <!-- Modal -->
+  <div class="modal" id="modal" aria-hidden="true" aria-modal="true" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-header">
+        <h2 class="modal-title" id="modalTitle">Title</h2>
+        <button class="close" id="modalClose" aria-label="Close (Esc)">Close <span class="kbd">Esc</span></button>
+      </div>
+      <div class="modal-media" id="modalMedia"></div>
+      <div class="modal-body">
+        <p class="date" id="modalDate"></p>
+        <p id="modalExplanation"></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer with NASA Worm Logo -->
+  <footer class="nasa-footer">
+    <div class="footer-content">
+      <img src="img/nasa-worm-logo.png" alt="NASA Worm Logo" class="nasa-worm-logo" />
+      <p class="footer-text">
+        Bringing the universe closer to you through NASA's Astronomy Picture of the Day
+      </p>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
