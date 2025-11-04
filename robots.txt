@@ -1,0 +1,19 @@
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://nasa-space-explorer.com/sitemap.xml
+
+# Disallow crawling of any potential admin or private areas
+# (None currently exist, but good practice)
+Disallow: /admin/
+Disallow: /private/
+Disallow: /*.json$
+
+# Allow crawling of CSS and JS files for better indexing
+Allow: /style.css
+Allow: /js/
+Allow: /img/
+
+# Crawl delay (optional - helps prevent overwhelming the server)
+Crawl-delay: 1

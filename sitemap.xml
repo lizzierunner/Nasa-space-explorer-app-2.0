@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  
+  <!-- Main Homepage -->
+  <url>
+    <loc>https://nasa-space-explorer.com/</loc>
+    <lastmod>2025-11-04</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://nasa-space-explorer.com/img/NASA-Logo-Large.jpg</image:loc>
+      <image:caption>NASA Space Explorer - Discover the Universe</image:caption>
+      <image:title>NASA Space Explorer Homepage</image:title>
+    </image:image>
+  </url>
+  
+  <!-- Home Section -->
+  <url>
+    <loc>https://nasa-space-explorer.com/#home</loc>
+    <lastmod>2025-11-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <!-- Explore Section -->
+  <url>
+    <loc>https://nasa-space-explorer.com/#explore</loc>
+    <lastmod>2025-11-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Gallery Section -->
+  <url>
+    <loc>https://nasa-space-explorer.com/#gallery</loc>
+    <lastmod>2025-11-04</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://nasa-space-explorer.com/img/NASA-Logo-Large.jpg</image:loc>
+      <image:caption>NASA Space Image Gallery</image:caption>
+      <image:title>Explore NASA's Space Image Collection</image:title>
+    </image:image>
+  </url>
+  
+  <!-- Favorites Section -->
+  <url>
+    <loc>https://nasa-space-explorer.com/#favorites</loc>
+    <lastmod>2025-11-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <!-- ISS Tracker Section -->
+  <url>
+    <loc>https://nasa-space-explorer.com/#iss-tracker</loc>
+    <lastmod>2025-11-04</lastmod>
+    <changefreq>hourly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- APOD (Astronomy Picture of the Day) -->
+  <url>
+    <loc>https://nasa-space-explorer.com/#apod</loc>
+    <lastmod>2025-11-04</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <!-- Search Feature -->
+  <url>
+    <loc>https://nasa-space-explorer.com/#search</loc>
+    <lastmod>2025-11-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <!-- Space Missions -->
+  <url>
+    <loc>https://nasa-space-explorer.com/#missions</loc>
+    <lastmod>2025-11-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+</urlset>
